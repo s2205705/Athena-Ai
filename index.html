@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Athena - Advanced Study AI Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="header-content">
+                <div class="logo-container">
+                    <div class="ai-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div>
+                        <h1>Athena</h1>
+                        <p class="subtitle">Advanced Study AI Assistant</p>
+                    </div>
+                </div>
+                <div class="header-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-clock"></i>
+                        <span id="current-time">Loading...</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span id="current-date">Loading...</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-hourglass-half"></i>
+                        <span>Focus Session: <span id="focus-timer">00:00</span></span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- AI Assistant Panel -->
+            <div class="ai-panel">
+                <div class="ai-avatar">
+                    <div class="ai-visual">
+                        <div class="neural-network">
+                            <div class="node node-1"></div>
+                            <div class="node node-2"></div>
+                            <div class="node node-3"></div>
+                            <div class="node node-4"></div>
+                            <div class="connection"></div>
+                            <div class="connection"></div>
+                            <div class="connection"></div>
+                        </div>
+                    </div>
+                    <div class="status-indicator">
+                        <div class="status-dot active"></div>
+                        <span>Online</span>
+                    </div>
+                </div>
+                
+                <!-- AI Status -->
+                <div class="ai-status">
+                    <div class="status-card">
+                        <h3><i class="fas fa-microchip"></i> System Status</h3>
+                        <div class="status-item">
+                            <span>Processing Power:</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="processing-power" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="status-item">
+                            <span>Knowledge Base:</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="knowledge-base" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div class="status-item">
+                            <span>Memory Usage:</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="memory-usage" style="width: 67%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Study Interface -->
+            <div class="study-interface">
+                <!-- Chat Interface -->
+                <div class="chat-container">
+                    <div class="chat-header">
+                        <h2><i class="fas fa-comments"></i> Study Assistant</h2>
+                        <div class="study-controls">
+                            <button class="study-btn" id="focus-mode">
+                                <i class="fas fa-crosshairs"></i>
+                                <span>Focus Mode</span>
+                            </button>
+                            <button class="study-btn" id="record-session">
+                                <i class="fas fa-record-vinyl"></i>
+                                <span>Record Session</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Chat Messages -->
+                    <div class="chat-messages" id="chat-messages">
+                        <div class="message ai-message">
+                            <div class="message-avatar">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="message-content">
+                                <p>Greetings. I am Athena, your advanced study assistant. I am equipped to help you with:</p>
+                                <ul class="capabilities">
+                                    <li><i class="fas fa-book"></i> Academic research and explanations</li>
+                                    <li><i class="fas fa-code"></i> Programming and technical assistance</li>
+                                    <li><i class="fas fa-chart-line"></i> Data analysis and visualization</li>
+                                    <li><i class="fas fa-language"></i> Language translation and analysis</li>
+                                    <li><i class="fas fa-project-diagram"></i> Concept mapping and organization</li>
+                                    <li><i class="fas fa-question-circle"></i> Problem solving and critical thinking</li>
+                                </ul>
+                                <p>How may I assist your studies today?</p>
+                                <span class="message-time">System initialized</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Input Area -->
+                    <div class="input-area">
+                        <div class="input-container">
+                            <div class="input-header">
+                                <span class="input-label">Query Input</span>
+                                <div class="input-options">
+                                    <button class="option-btn" data-type="text">
+                                        <i class="fas fa-font"></i>
+                                    </button>
+                                    <button class="option-btn" data-type="code">
+                                        <i class="fas fa-code"></i>
+                                    </button>
+                                    <button class="option-btn" data-type="math">
+                                        <i class="fas fa-square-root-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="input-wrapper">
+                                <textarea id="user-input" placeholder="Enter your study query, problem, or topic for analysis..." 
+                                          rows="3" autocomplete="off"></textarea>
+                                <div class="input-buttons">
+                                    <button id="send-btn" class="action-btn primary">
+                                        <i class="fas fa-paper-plane"></i>
+                                        <span>Analyze</span>
+                                    </button>
+                                    <button id="clear-btn" class="action-btn secondary">
+                                        <i class="fas fa-eraser"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="quick-actions">
+                            <button class="quick-btn" data-action="explain">
+                                <i class="fas fa-lightbulb"></i> Explain Concept
+                            </button>
+                            <button class="quick-btn" data-action="problem">
+                                <i class="fas fa-calculator"></i> Solve Problem
+                            </button>
+                            <button class="quick-btn" data-action="summary">
+                                <i class="fas fa-file-alt"></i> Generate Summary
+                            </button>
+                            <button class="quick-btn" data-action="quiz">
+                                <i class="fas fa-question"></i> Create Quiz
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Study Tools Panel -->
+                <div class="tools-panel">
+                    <div class="tool-card">
+                        <h3><i class="fas fa-bookmark"></i> Study Session</h3>
+                        <div class="session-info">
+                            <div class="metric">
+                                <span class="metric-label">Time Studied</span>
+                                <span class="metric-value">2h 35m</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Topics Covered</span>
+                                <span class="metric-value">7</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Retention Score</span>
+                                <span class="metric-value">84%</span>
+                            </div>
+                        </div>
+                        <button class="tool-btn">
+                            <i class="fas fa-play-circle"></i> Start New Session
+                        </button>
+                    </div>
+
+                    <div class="tool-card">
+                        <h3><i class="fas fa-folder-open"></i> Resources</h3>
+                        <div class="resource-list">
+                            <div class="resource-item">
+                                <i class="fas fa-file-pdf"></i>
+                                <span>Mathematics Notes.pdf</span>
+                            </div>
+                            <div class="resource-item">
+                                <i class="fas fa-file-code"></i>
+                                <span>Python Examples.py</span>
+                            </div>
+                            <div class="resource-item">
+                                <i class="fas fa-link"></i>
+                                <span>Research Papers</span>
+                            </div>
+                        </div>
+                        <button class="tool-btn">
+                            <i class="fas fa-plus"></i> Add Resource
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Panel -->
+            <div class="features-panel">
+                <h3><i class="fas fa-tools"></i> Advanced Features</h3>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h4>Adaptive Learning</h4>
+                        <p>AI adjusts to your learning pace and style</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-network"></i>
+                        </div>
+                        <h4>Knowledge Mapping</h4>
+                        <p>Visual connections between concepts</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h4>Research Database</h4>
+                        <p>Access to academic papers and journals</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-vial"></i>
+                        </div>
+                        <h4>Simulation Engine</h4>
+                        <p>Interactive simulations for complex topics</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <p>Athena Study Assistant v2.1 | <span id="system-status">All systems operational</span></p>
+                <div class="footer-links">
+                    <button id="settings-btn"><i class="fas fa-sliders-h"></i> Preferences</button>
+                    <button id="help-btn"><i class="fas fa-question-circle"></i> Documentation</button>
+                    <button id="export-btn"><i class="fas fa-download"></i> Export Data</button>
+                    <button id="analytics-btn"><i class="fas fa-chart-bar"></i> Analytics</button>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Settings Modal -->
+    <div class="modal" id="settings-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-sliders-h"></i> System Preferences</h3>
+                <button class="modal-close" id="close-settings">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="settings-section">
+                    <h4><i class="fas fa-brain"></i> AI Configuration</h4>
+                    <div class="setting-item">
+                        <label>
+                            <input type="checkbox" id="adaptive-learning" checked>
+                            Enable Adaptive Learning Algorithms
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label>
+                            <input type="checkbox" id="deep-analysis" checked>
+                            Enable Deep Analysis Mode
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label>
+                            Response Detail Level:
+                            <input type="range" id="detail-level" min="1" max="5" step="1" value="3">
+                            <span id="detail-value">Balanced</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="settings-section">
+                    <h4><i class="fas fa-user-cog"></i> Study Preferences</h4>
+                    <div class="setting-item">
+                        <label>
+                            Primary Field of Study:
+                            <select id="study-field">
+                                <option value="stem">STEM</option>
+                                <option value="humanities">Humanities</option>
+                                <option value="social">Social Sciences</option>
+                                <option value="business">Business</option>
+                                <option value="creative">Creative Arts</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label>
+                            <input type="checkbox" id="auto-save" checked>
+                            Auto-save Study Sessions
+                        </label>
+                    </div>
+                </div>
+                
+                <button class="save-btn" id="save-settings">
+                    <i class="fas fa-save"></i> Save Preferences
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio Elements -->
+    <audio id="notification-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-correct-answer-tone-2870.mp3"></audio>
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
