@@ -5,20 +5,20 @@
 }
 
 :root {
-    --primary-color: #B2EBF2; /* Pastel Blue */
-    --secondary-color: #C8E6C9; /* Pastel Green */
-    --accent-color: #FFCCBC; /* Pastel Coral */
-    --accent-light: #E1BEE7; /* Pastel Purple */
-    --success-color: #A5D6A7; /* Soft Green */
-    --warning-color: #FFE082; /* Soft Yellow */
-    --error-color: #EF9A9A; /* Soft Red */
-    --background-color: #F3E5F5; /* Very Light Purple */
+    --primary-color: #2D3748;
+    --secondary-color: #4A5568;
+    --accent-color: #3182CE;
+    --accent-light: #63B3ED;
+    --success-color: #38A169;
+    --warning-color: #D69E2E;
+    --error-color: #E53E3E;
+    --background-color: #F7FAFC;
     --card-bg: #FFFFFF;
-    --text-color: #5D4037; /* Warm Brown */
-    --text-light: #8D6E63; /* Lighter Brown */
-    --border-color: #E1BEE7; /* Pastel Purple */
-    --shadow: 0 4px 6px -1px rgba(183, 148, 244, 0.1), 0 2px 4px -1px rgba(183, 148, 244, 0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(183, 148, 244, 0.1), 0 4px 6px -2px rgba(183, 148, 244, 0.05);
+    --text-color: #2D3748;
+    --text-light: #718096;
+    --border-color: #E2E8F0;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     --border-radius: 12px;
     --border-radius-sm: 8px;
     --transition: all 0.3s ease;
@@ -26,7 +26,7 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background: linear-gradient(135deg, #E0F7FA 0%, #F3E5F5 100%); /* Pastel blue to pastel purple */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     color: var(--text-color);
     padding: 20px;
@@ -45,7 +45,7 @@ body {
 
 /* Header */
 header {
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-light));
+    background: var(--primary-color);
     padding: 20px 40px;
     border-bottom: 1px solid var(--border-color);
 }
@@ -86,7 +86,7 @@ h1 {
     font-size: 2.5rem;
     font-weight: 700;
     color: white;
-    background: linear-gradient(to right, #FFE0B2, white);
+    background: linear-gradient(to right, var(--accent-light), white);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -94,7 +94,7 @@ h1 {
 
 .subtitle {
     font-size: 1rem;
-    color: var(--text-color);
+    color: var(--accent-light);
     font-weight: 500;
     letter-spacing: 0.5px;
 }
@@ -102,7 +102,7 @@ h1 {
 .header-stats {
     display: flex;
     gap: 24px;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
     padding: 12px 24px;
     border-radius: var(--border-radius-sm);
     backdrop-filter: blur(10px);
@@ -112,12 +112,12 @@ h1 {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: var(--text-color);
+    color: white;
     font-weight: 500;
 }
 
 .stat-item i {
-    color: var(--accent-color);
+    color: var(--accent-light);
 }
 
 .status-online {
@@ -147,7 +147,6 @@ h1 {
     padding: 24px;
     box-shadow: var(--shadow);
     transition: var(--transition);
-    border: 1px solid var(--border-color);
 }
 
 .dashboard-card:hover {
@@ -158,7 +157,7 @@ h1 {
 .dashboard-card h3 {
     font-size: 1.2rem;
     margin-bottom: 20px;
-    color: var(--text-color);
+    color: var(--primary-color);
     display: flex;
     align-items: center;
     gap: 10px;
@@ -232,8 +231,8 @@ h1 {
 .tool-btn {
     padding: 12px;
     background: var(--accent-color);
-    color: var(--text-color);
-    border: 1px solid var(--border-color);
+    color: white;
+    border: none;
     border-radius: var(--border-radius-sm);
     cursor: pointer;
     display: flex;
@@ -263,13 +262,11 @@ h1 {
     display: flex;
     flex-direction: column;
     height: 600px;
-    border: 1px solid var(--border-color);
 }
 
 .chat-header {
     padding: 20px;
     border-bottom: 1px solid var(--border-color);
-    background: var(--primary-color);
 }
 
 .chat-title {
@@ -281,7 +278,7 @@ h1 {
 
 .chat-title h2 {
     font-size: 1.5rem;
-    color: var(--text-color);
+    color: var(--primary-color);
     display: flex;
     align-items: center;
     gap: 10px;
@@ -318,7 +315,7 @@ h1 {
 
 .control-btn:hover {
     background: var(--accent-color);
-    color: var(--text-color);
+    color: white;
     border-color: var(--accent-color);
 }
 
@@ -378,12 +375,10 @@ h1 {
 
 .ai-message .message-content {
     border-left: 4px solid var(--accent-color);
-    background: #FCE4EC; /* Pastel pink for AI messages */
 }
 
 .user-message .message-content {
     border-left: 4px solid var(--success-color);
-    background: #F1F8E9; /* Pastel green for user messages */
 }
 
 .message-text {
@@ -471,7 +466,7 @@ textarea#user-input {
 
 textarea#user-input:focus {
     border-color: var(--accent-color);
-    box-shadow: 0 0 0 3px rgba(255, 204, 188, 0.1);
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
 }
 
 .input-buttons {
@@ -496,8 +491,7 @@ textarea#user-input:focus {
 
 .action-btn.primary {
     background: var(--accent-color);
-    color: var(--text-color);
-    border: 1px solid var(--border-color);
+    color: white;
 }
 
 .action-btn.primary:hover {
@@ -538,7 +532,7 @@ textarea#user-input:focus {
 
 .quick-action-btn:hover {
     background: var(--accent-color);
-    color: var(--text-color);
+    color: white;
     border-color: var(--accent-color);
 }
 
@@ -554,13 +548,12 @@ textarea#user-input:focus {
     border-radius: var(--border-radius);
     padding: 20px;
     box-shadow: var(--shadow);
-    border: 1px solid var(--border-color);
 }
 
 .tool-section h3 {
     font-size: 1.2rem;
     margin-bottom: 20px;
-    color: var(--text-color);
+    color: var(--primary-color);
     display: flex;
     align-items: center;
     gap: 10px;
@@ -582,7 +575,7 @@ textarea#user-input:focus {
 .timer-display {
     font-size: 3rem;
     font-weight: 700;
-    color: var(--text-color);
+    color: white;
     font-family: 'Source Code Pro', monospace;
     margin-bottom: 16px;
 }
@@ -598,8 +591,8 @@ textarea#user-input:focus {
     height: 50px;
     border-radius: 50%;
     border: none;
-    background: rgba(255, 255, 255, 0.5);
-    color: var(--text-color);
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -609,7 +602,7 @@ textarea#user-input:focus {
 }
 
 .timer-btn:hover {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.3);
     transform: scale(1.1);
 }
 
@@ -624,7 +617,6 @@ textarea#user-input:focus {
     padding: 12px;
     background: #f8fafc;
     border-radius: var(--border-radius-sm);
-    border: 1px solid var(--border-color);
 }
 
 .stat-label {
@@ -681,7 +673,7 @@ textarea#user-input:focus {
 
 .notes-btn:hover {
     background: var(--accent-color);
-    color: var(--text-color);
+    color: white;
     border-color: var(--accent-color);
 }
 
@@ -703,15 +695,15 @@ textarea#user-input:focus {
 }
 
 .bookmark-item:hover {
-    background: var(--primary-color);
+    background: #e6f0ff;
 }
 
 .bookmark-btn {
     width: 100%;
     padding: 12px;
     background: var(--accent-color);
-    color: var(--text-color);
-    border: 1px solid var(--border-color);
+    color: white;
+    border: none;
     border-radius: var(--border-radius-sm);
     cursor: pointer;
     display: flex;
@@ -733,7 +725,6 @@ textarea#user-input:focus {
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
     padding: 30px;
-    border: 1px solid var(--border-color);
 }
 
 .feature-tabs {
@@ -791,7 +782,7 @@ textarea#user-input:focus {
 
 .math-input h4 {
     font-size: 1.1rem;
-    color: var(--text-color);
+    color: var(--primary-color);
     display: flex;
     align-items: center;
     gap: 10px;
@@ -829,15 +820,15 @@ textarea#user-input:focus {
 
 .math-btn:hover {
     background: var(--accent-color);
-    color: var(--text-color);
+    color: white;
     border-color: var(--accent-color);
 }
 
 .solve-btn {
     padding: 16px;
     background: var(--accent-color);
-    color: var(--text-color);
-    border: 1px solid var(--border-color);
+    color: white;
+    border: none;
     border-radius: var(--border-radius-sm);
     cursor: pointer;
     font-size: 1.1rem;
@@ -857,7 +848,7 @@ textarea#user-input:focus {
 .math-result h5 {
     font-size: 1.1rem;
     margin-bottom: 16px;
-    color: var(--text-color);
+    color: var(--primary-color);
 }
 
 .solution-display {
@@ -902,7 +893,7 @@ textarea#user-input:focus {
 
 .code-editor h4, .code-output h5 {
     font-size: 1.1rem;
-    color: var(--text-color);
+    color: var(--primary-color);
     display: flex;
     align-items: center;
     gap: 10px;
@@ -927,8 +918,8 @@ textarea#user-input:focus {
     resize: vertical;
     outline: none;
     transition: var(--transition);
-    background: #f8fafc;
-    color: var(--text-color);
+    background: #2d3748;
+    color: #e2e8f0;
     min-height: 300px;
 }
 
@@ -941,8 +932,8 @@ textarea#user-input:focus {
     flex: 1;
     padding: 12px;
     background: var(--accent-color);
-    color: var(--text-color);
-    border: 1px solid var(--border-color);
+    color: white;
+    border: none;
     border-radius: var(--border-radius-sm);
     cursor: pointer;
     display: flex;
@@ -975,7 +966,7 @@ textarea#user-input:focus {
 
 .research-tools h4 {
     font-size: 1.1rem;
-    color: var(--text-color);
+    color: var(--primary-color);
     display: flex;
     align-items: center;
     gap: 10px;
@@ -1004,8 +995,8 @@ textarea#user-input:focus {
 #search-research {
     padding: 16px 32px;
     background: var(--accent-color);
-    color: var(--text-color);
-    border: 1px solid var(--border-color);
+    color: white;
+    border: none;
     border-radius: var(--border-radius-sm);
     cursor: pointer;
     font-weight: 600;
@@ -1037,12 +1028,12 @@ textarea#user-input:focus {
 }
 
 .research-item:hover {
-    background: var(--primary-color);
+    background: #e6f0ff;
 }
 
 .research-title {
     font-weight: 600;
-    color: var(--text-color);
+    color: var(--primary-color);
     margin-bottom: 8px;
 }
 
@@ -1074,7 +1065,7 @@ textarea#user-input:focus {
 
 .viz-tools h4 {
     font-size: 1.1rem;
-    color: var(--text-color);
+    color: var(--primary-color);
     display: flex;
     align-items: center;
     gap: 10px;
@@ -1109,8 +1100,8 @@ textarea#user-input:focus {
 .viz-btn {
     padding: 16px;
     background: var(--accent-color);
-    color: var(--text-color);
-    border: 1px solid var(--border-color);
+    color: white;
+    border: none;
     border-radius: var(--border-radius-sm);
     cursor: pointer;
     font-weight: 600;
@@ -1136,7 +1127,7 @@ textarea#user-input:focus {
 
 /* Footer */
 footer {
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-light));
+    background: var(--primary-color);
     padding: 20px 40px;
     border-top: 1px solid var(--border-color);
 }
@@ -1150,12 +1141,12 @@ footer {
 }
 
 .footer-left p {
-    color: var(--text-color);
+    color: rgba(255, 255, 255, 0.8);
     margin-bottom: 8px;
 }
 
 #system-status {
-    color: var(--text-color);
+    color: var(--accent-light);
     font-weight: 500;
 }
 
@@ -1163,7 +1154,7 @@ footer {
     display: flex;
     gap: 20px;
     font-size: 0.9rem;
-    color: var(--text-light);
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .footer-links {
@@ -1174,8 +1165,8 @@ footer {
 .footer-links button {
     padding: 10px 20px;
     background: transparent;
-    border: 1px solid rgba(93, 64, 55, 0.2);
-    color: var(--text-color);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
     border-radius: var(--border-radius-sm);
     cursor: pointer;
     display: flex;
@@ -1185,8 +1176,8 @@ footer {
 }
 
 .footer-links button:hover {
-    background: rgba(255, 255, 255, 0.3);
-    border-color: var(--accent-color);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent-light);
 }
 
 /* Modal */
@@ -1197,7 +1188,7 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1000;
     align-items: center;
     justify-content: center;
@@ -1212,7 +1203,6 @@ footer {
     max-height: 80vh;
     overflow-y: auto;
     box-shadow: var(--shadow-lg);
-    border: 1px solid var(--border-color);
 }
 
 .modal-header {
@@ -1221,7 +1211,6 @@ footer {
     align-items: center;
     padding: 24px 30px;
     border-bottom: 1px solid var(--border-color);
-    background: var(--primary-color);
 }
 
 .modal-header h3 {
@@ -1229,7 +1218,6 @@ footer {
     display: flex;
     align-items: center;
     gap: 12px;
-    color: var(--text-color);
 }
 
 .modal-close {
@@ -1248,8 +1236,8 @@ footer {
 }
 
 .modal-close:hover {
-    background: var(--primary-color);
-    color: var(--text-color);
+    background: #f7fafc;
+    color: var(--error-color);
 }
 
 .modal-body {
@@ -1362,8 +1350,7 @@ footer {
 
 .save-btn {
     background: var(--accent-color);
-    color: var(--text-color);
-    border: 1px solid var(--border-color);
+    color: white;
 }
 
 .save-btn:hover {
@@ -1378,7 +1365,7 @@ footer {
 }
 
 .reset-btn:hover {
-    background: var(--primary-color);
+    background: #f7fafc;
     border-color: var(--accent-color);
 }
 
@@ -1409,7 +1396,7 @@ footer {
 
 .pomodoro-btn {
     padding: 15px 30px;
-    border: 1px solid var(--border-color);
+    border: none;
     border-radius: var(--border-radius-sm);
     cursor: pointer;
     font-weight: 600;
@@ -1421,17 +1408,17 @@ footer {
 
 .pomodoro-btn.start {
     background: var(--success-color);
-    color: var(--text-color);
+    color: white;
 }
 
 .pomodoro-btn.pause {
     background: var(--warning-color);
-    color: var(--text-color);
+    color: white;
 }
 
 .pomodoro-btn.reset {
     background: var(--error-color);
-    color: var(--text-color);
+    color: white;
 }
 
 .pomodoro-btn:hover {
@@ -1525,7 +1512,7 @@ footer {
 
 .wb-tool.active {
     background: var(--accent-color);
-    color: var(--text-color);
+    color: white;
     border-color: var(--accent-color);
 }
 
@@ -1541,8 +1528,8 @@ footer {
 .wb-btn {
     padding: 12px 24px;
     background: var(--accent-color);
-    color: var(--text-color);
-    border: 1px solid var(--border-color);
+    color: white;
+    border: none;
     border-radius: var(--border-radius-sm);
     cursor: pointer;
     font-weight: 500;
@@ -1648,7 +1635,7 @@ pre[class*="language-"] {
     display: inline-block;
     width: 20px;
     height: 20px;
-    border: 3px solid rgba(255, 204, 188, 0.3);
+    border: 3px solid rgba(49, 130, 206, 0.3);
     border-radius: 50%;
     border-top-color: var(--accent-color);
     animation: spin 1s ease-in-out infinite;
@@ -1672,7 +1659,7 @@ pre[class*="language-"] {
     transform: translateX(-50%);
     padding: 8px 12px;
     background: var(--primary-color);
-    color: var(--text-color);
+    color: white;
     border-radius: var(--border-radius-sm);
     font-size: 0.9rem;
     white-space: nowrap;
@@ -1680,7 +1667,6 @@ pre[class*="language-"] {
     pointer-events: none;
     transition: opacity 0.3s;
     z-index: 1000;
-    border: 1px solid var(--border-color);
 }
 
 [data-tooltip]:hover:before {
